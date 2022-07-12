@@ -1,0 +1,26 @@
+VERBOS HTTP:
+
+GET:
+Requisita um determinado recurso e, retorna apenas dados.
+
+POST:
+Submeter dados a um determinado recurso. É utilizado para alterar estados de um recurso presente no servidor.
+
+HEAD
+
+PUT:
+Substitui todas as atuais representações do recurso de destino pela carga de dados da requisição.
+
+DELETE:
+Apaga determinado recurso.
+
+CONNECT:
+Estabelece um túnel de conexão para um servidor com base em um recurso.
+
+OPTIONS:
+Utilizado para definir as opções para comunicação com um determinado recurso.
+
+TRACE:
+Realiza um teste de loopback para verificar se uma mensagem consegue chegar a um determinado destino.
+
+PATCH
