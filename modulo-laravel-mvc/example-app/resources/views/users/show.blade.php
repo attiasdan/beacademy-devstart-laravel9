@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
+    <title>Usuário {{ $user->name }}</title>    <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Listagem de Usuários</title>
+
     <style>
         body {
             background-color: #333333;
@@ -17,8 +17,8 @@
 </head>
 <body>
     <div>
-        <h1>Listagem de Usuários</h1>
-        <table class="table text-white">
+        <h1>Usuário {{ $user->name }}</h1>
+        <table class="table text-white text-center">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -29,15 +29,16 @@
               </tr>
             </thead>
             <tbody>
-                @foreach($users as $user)
-                    <tr>
-                        <th scope="row">{{ $user->id }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
-                        <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info">VISUALIZAR</a></td>
-                    </tr>
-                @endforeach
+                <tr>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
+                    <td>
+                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning">EDITAR</a>
+                        <a href="{{ route('users.show', $user->id) }}" class="btn btn-danger">DELETAR</a>
+                    </td>
+                </tr>
             </tbody>
           </table>
     </div>
