@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateUserFormRequest;
+
+use function GuzzleHttp\Promise\queue;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = [
-            'nome' => 'José Lira',
-            'nome' => 'Jão Lira'
-        ];
-        dd($users);
+        $users = User::all();
+
+        return view('users.index', compact('users'));
     }
 
     public function show($id)
