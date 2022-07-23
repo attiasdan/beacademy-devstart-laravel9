@@ -1,0 +1,12 @@
+Popular tabela com dados aleatórios:
+php artisan db:seed
+
+Executar as Migrations pendentes:
+php artisan migrate
+
+Limpar cache Laravel:
+php artisan optimize
+
+Criar Seeder:
+php artisan make:factory AddressesSeeder
+php artisan make:model Address
