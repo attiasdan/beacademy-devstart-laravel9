@@ -7,6 +7,9 @@ use App\Http\Controllers\{
 };
 
 // ROTAS DE USUÁRIO:
+Route::get('/', function () {
+    return redirect()->route('users.index');
+});
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/user', [UserController::class, 'store'])->name('users.store');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
