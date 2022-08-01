@@ -6,23 +6,13 @@ use App\Http\Controllers\{
     ViaCepController
 };
 
+// ROTAS DE USUÁRIO:
+Route::post('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::get('/user', [UserController::class, 'store'])->name('users.store');
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 
-//VIA CEP WEB SERVICE
+// VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
 Route::post('/viacep', [ViaCepController::class, 'index'])->name('viacep.index.post');
 Route::get('/viacep/{cep}', [ViaCepController::class, 'show'])->name('viacep.show');
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/hello-world', function () {
-//     echo 'Hello World!';
-// });
-
-// Route::get('/users/{nome}', function($nome) {
-//     echo $nome;
-// });
