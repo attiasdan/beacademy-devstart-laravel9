@@ -10,7 +10,20 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container w-50">
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark p-3">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/users" class="nav-link text-white">Usuários</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/posts" class="nav-link text-white">Posts</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
         @yield('body')
     </div>
 
