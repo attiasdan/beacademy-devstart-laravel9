@@ -6,16 +6,24 @@
     <table class="table text-white">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">NOME</th>
-            <th scope="col">E-MAIL</th>
-            <th scope="col">DATA CADASTRO</th>
-            <th scope="col">AÇÕES</th>
+                <th scope="col">FOTO</th>
+                <th scope="col">ID</th>
+                <th scope="col">NOME</th>
+                <th scope="col">E-MAIL</th>
+                <th scope="col">DATA CADASTRO</th>
+                <th scope="col">AÇÕES</th>
             </tr>
         </thead>
         <tbody>
             @foreach($users as $user)
                 <tr>
+                    <th>
+                        @if($user->image)
+                            <img src="{{ asset('storage/'.$user->image) }}" width="75px" height="75px" alt="" class="rounded-circle">
+                        @else
+                            <img src="{{ asset('storage/profile/avatar.png') }}" width="75px" height="75px" alt="" class="rounded-circle">
+                        @endif
+                    </th>
                     <th scope="row">{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
