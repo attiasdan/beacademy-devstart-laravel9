@@ -19,9 +19,9 @@
                 <tr>
                     <th>
                         @if($user->image)
-                            <img src="{{ asset('storage/'.$user->image) }}" width="75px" height="75px" alt="" class="rounded-circle">
+                            <img src="{{ asset('storage/'.$user->image) }}" width="75px" height="75px" alt="{{ $user->name }}" class="rounded-circle">
                         @else
-                            <img src="{{ asset('storage/profile/avatar.png') }}" width="75px" height="75px" alt="" class="rounded-circle">
+                            <img src="{{ asset('storage/profile/avatar.png') }}" width="75px" height="75px" alt="sem foto" class="rounded-circle">
                         @endif
                     </th>
                     <th scope="row">{{ $user->id }}</th>
@@ -33,4 +33,7 @@
             @endforeach
         </tbody>
     </table>
+    <div class="justify-content-center pagination">
+        {{ $users->links('pagination::bootstrap-4') }}
+    </div>
 @endsection
