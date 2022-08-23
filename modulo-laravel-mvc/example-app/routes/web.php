@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    PostController,
     UserController,
     ViaCepController
 };
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 // ROTAS DE USUÁRIO:
 Route::get('/', function () {
