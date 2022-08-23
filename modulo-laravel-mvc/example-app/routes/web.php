@@ -10,9 +10,9 @@ use App\Http\Controllers\{
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 // ROTAS DE USUÁRIO:
-Route::get('/', function () {
-    return redirect()->route('users.index');
-});
+// Route::get('/', function () {
+//     return redirect()->route('users.index');
+// });
 
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
