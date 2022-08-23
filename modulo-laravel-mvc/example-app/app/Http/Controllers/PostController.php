@@ -16,14 +16,16 @@ class PostController extends Controller
         $this->user = $user;
         $this->post = $post;
     }
-    public function index($userId)
+    public function index()
     {
         // dd($this->user->find($userId));
-        if(!$user = $this->user->find($userId)) {
-            return redirect()->back();
-        }
-        $posts = $user->posts()->get();
 
-        return view('posts.index', compact('user', 'posts'));
+        // if(!$user = $this->user->find($userId)) {
+        //     return redirect()->back();
+        // }
+        // $posts = $user->posts()->get();
+        $posts = $this->post->all();
+
+        return view('posts.index', compact('posts'));
     }
 }
